@@ -7511,7 +7511,7 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=15e37486">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e2832ab9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7535,6 +7535,29 @@ a.anchor-link {
 <li>competing pathways</li>
 <li>knock-outs</li>
 </ul>
+<p><strong>Before getting started:</strong> Please put the names of your group members into the markdown cell below so that you can take credit for your work.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e5e67002">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Group Members:</strong></p>
+<p><em>Member 1, Member 2, e.g</em></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=15e37486">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="What-is-flux-balance-analysis?">What is flux-balance analysis?<a class="anchor-link" href="#What-is-flux-balance-analysis?">¶</a></h2><p>Flux-balance analysis is a predictive modeling method that is significantly used in systems biology. It has a wide variety of applications including (but not limited to):</p>
 <ol>
 <li>Media optimization for the culture</li>
@@ -7551,12 +7574,12 @@ a.anchor-link {
 <p>$$v = \begin{pmatrix} -2 &amp; -2 &amp; 2 &amp; 1 \end{pmatrix}^T$$</p>
 <p>Where each item represents the coefficient consumed/produced of that metabolite in the reaction. This principle applied to thousands of metabolites and reactions, and we get a linear optimization problem formulated as $Sv = 0$ where:</p>
 <ul>
-<li>$S \in \R^{M \times N}$ represents the stoichiometric matrix with each column a reaction, and each row a metabolite.</li>
-<li>$v \in \R^{N}$ represents the fluxes (rates) of reactions, usually in units $mmol/gDW/h$.</li>
+<li>$S \in R^{M \times N}$ represents the stoichiometric matrix with each column a reaction, and each row a metabolite.</li>
+<li>$v \in R^{N}$ represents the fluxes (rates) of reactions, usually in units $mmol/gDW/h$ (biomass reactions are usually in $1/h$).</li>
 <li>an assumption is made that the metabolic network is at steady-state, where each metabolite is consumed and produced at the same amount.</li>
 </ul>
-<p>Given a metabolite concentration $[x]$ with the corresponding coefficient $s_i$ in the $i'th$ reaction, and $t$ for time, an equivalent formulation of the problem would be $$ \sum_{i=1}^N s_i v_i = \frac{d[x]}{dt} = 0 $$</p>
-<p>As simple as this linear optimization looks, real use of flux-balance analysis pairs with <a href="https://en.wikipedia.org/wiki/Multiomics">multiomics data</a> to carry out powerful analyses and infer more about the metabolism.</p>
+<p>Given a metabolite concentration $[x]$ with the corresponding coefficient $s_i$ in the $i^{th}$ reaction, and $t$ for time, an equivalent formulation of the problem would be $$ \sum_{i=1}^N s_i v_i = \frac{d[x]}{dt} = 0 $$</p>
+<p>For more advanced analyses, flux-balance analysis pairs with <a href="https://en.wikipedia.org/wiki/Multiomics">multiomics data</a> which can introduce more information such as genetics, transcriptomics, epigenetics, etc.</p>
 <h3 id="What-are-genome-scale-metabolic-models?">What are genome-scale metabolic models?<a class="anchor-link" href="#What-are-genome-scale-metabolic-models?">¶</a></h3><p>Genome-scale metabolic models (GSMM or GEM for short) are formatted data files that contains all the essential information of the metabolism
 of an organism. Not only the set of reactions and metabolites, but they hold much more information such as gene associations (for turning on/off phenotypes), model compartments, flux constraints, etc. Development of comprehensive and accurate GSMMs for non-model organisms is one of the greatest bottlenecks of systems biology.</p>
 <p>Most GSMMs are published and used in the file format called SBML, which stands for <strong>systems biology markup language</strong>. However, the JSON file format, originally created for data transfer in web software applications, is also used for a similar purpose.</p>
@@ -7570,7 +7593,7 @@ of an organism. Not only the set of reactions and metabolites, but they hold muc
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip3<span class="w"> </span>install<span class="w"> </span>cobra<span class="w"> </span>-qqq
@@ -7593,12 +7616,12 @@ of an organism. Not only the set of reactions and metabolites, but they hold muc
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d2b10c7a">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=d2b10c7a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">model</span><span class="p">:</span> <span class="n">Model</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">read_sbml_model</span><span class="p">(</span><span class="s1">'./iJO1366.xml'</span><span class="p">)</span>
@@ -7612,31 +7635,6 @@ of an organism. Not only the set of reactions and metabolites, but they hold muc
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>First 5 metabolites: 
-(1) ID: 10fthf_c - Name: 10-Formyltetrahydrofolate
-(2) ID: 12dgr120_c - Name: 1,2-Diacyl-sn-glycerol (didodecanoyl, n-C12:0)
-(3) ID: 12dgr140_c - Name: 1,2-Diacyl-sn-glycerol (ditetradecanoyl, n-C14:0)
-(4) ID: 12dgr141_c - Name: 1,2-Diacyl-sn-glycerol (ditetradec-7-enoyl, n-C14:1)
-(5) ID: 12dgr160_c - Name: 1,2-Diacyl-sn-glycerol (dihexadecanoyl, n-C16:0)
-
-First 5 reactions: 
-(1) ID: EX_cm_e - Name: Chloramphenicol exchange
-(2) ID: EX_cmp_e - Name: CMP exchange
-(3) ID: EX_co2_e - Name: CO2 exchange
-(4) ID: EX_cobalt2_e - Name: Co2+ exchange
-(5) ID: DM_4crsol_c - Name: Sink needed to allow p-Cresol to leave system
-</pre>
-</div>
-</div>
-</div>
-</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b91217e3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -7644,86 +7642,20 @@ First 5 reactions:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>The above code reads the <code>sbml</code> file into the <code>Model</code> object, and then reads out the names and ids of the first 5 reactions and metabolites in the array. To understand how data is stored in the <code>Model</code> object, we can further look into the <code>Metabolite</code> and <code>Reaction</code> classes.</p>
+<p>The above code reads the <code>sbml</code> file into the <code>Model</code> object, and then reads out the names and ids of the first 5 reactions and metabolites in the array. To understand how data is stored in the <code>Model</code> object, we can further look into the <code>Metabolite</code> and <code>Reaction</code> classes, some of which we'll cover in this notebook. If you're curious, you can visit the <a href="https://cobrapy.readthedocs.io/en/latest/">COBRApy documentation page</a> for more information.</p>
 <p>Here's a neater way to display the model information on jupyter notebook, which neatly renders as a table:</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c1b14a3e">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=c1b14a3e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">model</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<table>
-<tr>
-<td><strong>Name</strong></td>
-<td>iJO1366</td>
-</tr><tr>
-<td><strong>Memory address</strong></td>
-<td>1ef52470ef0</td>
-</tr><tr>
-<td><strong>Number of metabolites</strong></td>
-<td>1805</td>
-</tr><tr>
-<td><strong>Number of reactions</strong></td>
-<td>2583</td>
-</tr><tr>
-<td><strong>Number of genes</strong></td>
-<td>1367</td>
-</tr><tr>
-<td><strong>Number of groups</strong></td>
-<td>0</td>
-</tr><tr>
-<td><strong>Objective expression</strong></td>
-<td>1.0*BIOMASS_Ec_iJO1366_core_53p95M - 1.0*BIOMASS_Ec_iJO1366_core_53p95M_reverse_5c8b1</td>
-</tr><tr>
-<td><strong>Compartments</strong></td>
-<td>cytosol, extracellular space, periplasm</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5db344b4">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>The output is too long, but if you want to read the documentation of the <code>Metabolite</code> and <code>Reaction</code> objects, feel free to uncomment the below lines. Alternatively, you can visit the <a href="https://cobrapy.readthedocs.io/en/latest/">COBRApy documentation page</a> for more information.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=6587f0dc">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">cobra</span><span class="w"> </span><span class="kn">import</span> <span class="n">Metabolite</span><span class="p">,</span> <span class="n">Reaction</span>
-
-<span class="c1"># print(help(Metabolite))</span>
-<span class="c1"># print(help(Reaction))</span>
 </pre></div>
 </div>
 </div>
@@ -7736,18 +7668,18 @@ First 5 reactions:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>As previously discussed, flux-balance analysis makes a major assumption; that all metabolites are produced and consumed at the same amount. This assumption describes a steady-state (equilibrium for a set of reactions). Within this assumption, we're trying to find an arrangement of fluxes that yield the highest (maximum) flux through our target reaction (objective).</p>
+<p>As previously discussed, flux-balance analysis makes a major assumption; that all metabolites are produced and consumed at the same amount. This assumption describes a steady-state. Within this assumption, we're trying to find an arrangement of flux vector $v$ that gives the highest (maximum) flux through our target reaction (objective).</p>
 <p>Let's assume we want to optimize for the <strong>biomass</strong> objective function. The name of this function may vary based on the GSMM and the database that was used to construct it, but the <strong>biomass</strong> keyword is usually in there somewhere.</p>
 <p>With the following script, we can identify the biomass reaction by looking for the <strong>biomass</strong> keyword in all reaction IDs.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=2ecc00e1">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=2ecc00e1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">biomass_rxns</span> <span class="o">=</span> <span class="p">[</span><span class="n">rxn</span> <span class="k">for</span> <span class="n">rxn</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">reactions</span> <span class="k">if</span> <span class="s1">'biomass'</span> <span class="ow">in</span> <span class="n">rxn</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span>
@@ -7756,21 +7688,6 @@ First 5 reactions:
 <span class="k">for</span> <span class="n">rxn</span> <span class="ow">in</span> <span class="n">biomass_rxns</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'- </span><span class="si">{</span><span class="n">rxn</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s1">: </span><span class="si">{</span><span class="n">rxn</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Biomass Reactions: 
-- BIOMASS_Ec_iJO1366_WT_53p95M: E. coli biomass objective function (iJO1366) - WT - with 53.95 GAM estimate
-- BIOMASS_Ec_iJO1366_core_53p95M: E. coli biomass objective function (iJO1366) - core - with 53.95 GAM estimate
-</pre>
 </div>
 </div>
 </div>
@@ -7785,19 +7702,19 @@ First 5 reactions:
 <p>Some models may have multiple biomass functions. Usually different biomass functions indicate</p>
 <ol>
 <li>the estimations via different experiments, or</li>
-<li>predictions under different medium conditions, representing different modes of the organism.</li>
+<li>predictions under different medium conditions, representing different "modes" of the organism.</li>
 </ol>
-<p>As an example, in our <a href="https://2025.igem.wiki/mcmasteru/">iGEM 2025 (Sterosaurus)</a> project, we used the iCre1355 model of the <em>C. reinhardtii</em> algae organism. There were 3 biomass functions representing the autotrophic, mixotrophic, and heterotrophic mode. These modes represent the growth function of the organism under different medium conditions i.e. O2 stress, CO2 stress, etc. You can find the paper for the model <a href="https://onlinelibrary.wiley.com/doi/10.1111/tpj.13059">here</a>.</p>
+<p>As an example, in our <a href="https://2025.igem.wiki/mcmasteru/">iGEM 2025 (Sterosaurus)</a> project, we used the iCre1355 model of the <em>C. reinhardtii</em> algae organism. There were 3 biomass functions representing the autotrophic, mixotrophic, and heterotrophic mode. These modes represent the growth function of the organism under different medium conditions i.e. O2 stress, CO2 stress, etc. You can find the paper for the GSMM model we used in our project <a href="https://onlinelibrary.wiley.com/doi/10.1111/tpj.13059">here</a>.</p>
 <p>For our optimization purposes, we'll use the core biomass function <code>BIOMASS_Ec_iJO1366_core_53p95M</code>. Let's now optimize our model and get the flux results.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=2a3dd27d">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=2a3dd27d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">biomass_obj</span> <span class="o">=</span> <span class="s1">'BIOMASS_Ec_iJO1366_core_53p95M'</span>
@@ -7815,27 +7732,6 @@ First 5 reactions:
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Top 5 fluxes in optimal solution:
-ATPS4rpp      55.815247
-EX_h2o_e      45.619430
-CYTBO3_4pp    35.149539
-NADH16pp      31.021723
-EX_co2_e      19.675223
-Name: fluxes, dtype: float64
-
-Optimal growth rate: 0.9823718127269743 1/hr
-</pre>
-</div>
-</div>
-</div>
-</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bf0848e3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -7843,34 +7739,23 @@ Optimal growth rate: 0.9823718127269743 1/hr
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Now, moving on to different features.</p>
 <p>Additionally, reactions can be upper and lower bounded within the model. We can do this by reaching a reaction of our choice within the model and change its <code>upper_bound</code> and <code>lower_bound</code> parameters. Let's try to do this on the medium uptake of our model.</p>
 <p>To find a reaction of interest, we may think we need to iterate through every reaction in the model. However, there's simple ways in which we can reduce the workload. For instance, the cobra <code>Model</code> object is known to keep record of the compartments of each metabolite. We can first write a script to print out the compartments available in the model, and then filter only for the exchange reactions that have extracellular metabolites as reactants.</p>
 <p>We start by listing out the compartments of our model.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=379e387f">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=379e387f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">compartments</span>
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>{'c': 'cytosol', 'e': 'extracellular space', 'p': 'periplasm'}</pre>
 </div>
 </div>
 </div>
@@ -7882,16 +7767,16 @@ Optimal growth rate: 0.9823718127269743 1/hr
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Notice that the <code>'e': 'extracellular space'</code> compartment fits our use case. Now, let's print out each metabolite found in this compartment.</p>
+<p>Notice that the <code>'e': 'extracellular space'</code> compartment fits our use case. We're looking for the extracellular oxygen metabolite to find its relevant reactions.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5c1c33d5">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=5c1c33d5">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Query for all metabolites with 'o2' in their ID or name</span>
@@ -7909,24 +7794,6 @@ Optimal growth rate: 0.9823718127269743 1/hr
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>[('co2_e', 'CO2 CO2'),
- ('h2o2_e', 'Hydrogen peroxide'),
- ('kdo2lipid4_e', 'KDO(2)-lipid IV(A)'),
- ('so2_e', 'Sulfur dioxide'),
- ('no2_e', 'Nitrite'),
- ('o2_e', 'O2 O2'),
- ('o2s_e', 'Superoxide anion')]</pre>
-</div>
-</div>
-</div>
-</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7e900728">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -7934,16 +7801,16 @@ Optimal growth rate: 0.9823718127269743 1/hr
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Now, let's try to constrain the model based on its oxygen uptake. We now find the oxygen uptake reaction.</p>
+<p>The sixth item seems to be the metabolite we're loooking for. Now, let's try to constrain the model based on its oxygen uptake. We know that the oxygen uptake reaction must contain our metabolite as a reactant. So let's find the oxygen uptake reaction.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ee506ae4">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=ee506ae4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">o2e_id</span><span class="p">,</span> <span class="n">o2e_name</span> <span class="o">=</span> <span class="n">output</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
@@ -7960,20 +7827,6 @@ Optimal growth rate: 0.9823718127269743 1/hr
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>- EX_o2_e: O2 exchange: -1000.0 to 1000.0 mmol/gDW/hr
-- O2tex: Oxygen transport via diffusion (extracellular to periplasm): -1000.0 to 1000.0 mmol/gDW/hr
-</pre>
-</div>
-</div>
-</div>
-</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8d31549b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -7981,16 +7834,17 @@ Optimal growth rate: 0.9823718127269743 1/hr
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>In the context of a metabolic model, a range of -1000 to 1000 is practically infinite. Let's set this much lower. The reason why we take the copy of the original model in the below code is because <code>Model</code> and <code>Reaction</code> behave as reference types, and the variable <code>oxygen_uptake_rxn</code> can mutate the original object in the model. Making a copy prevents us from overwriting the original data.</p>
+<p>The above code filters the reactions that include our metabolite as a reactant, and prints out their id, name, and constraints. In the context of a metabolic model, a range of -1000 to 1000 as upper and lower bounds is practically infinite. Let's set this much lower. The reason why we take the copy of the original model in the below code is because <code>Model</code> and <code>Reaction</code> behave as reference types, and the variable <code>oxygen_uptake_rxn</code> can mutate the original object in the model. Making a copy prevents us from overwriting the original data.</p>
+<p>In the below cell block, we use the <code>upper_bound</code> and <code>lower_bound</code> properties of the <code>Reaction</code> object to constrain its activity. Upon the update, we run the analysis using the <code>optimize()</code> method of our model.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=9f52c917">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=9f52c917">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Original optimization</span>
@@ -8012,22 +7866,6 @@ Optimal growth rate: 0.9823718127269743 1/hr
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>
-Optimal growth rate: 0.9823718127269705 1/hr
-
-Optimal growth rate: 0.49154514798795895 1/hr
-</pre>
-</div>
-</div>
-</div>
-</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e368a949">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -8041,12 +7879,12 @@ Optimal growth rate: 0.49154514798795895 1/hr
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c2fbfdcb">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=c2fbfdcb">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">read_sbml_model</span><span class="p">(</span><span class="s1">'./iJO1366.xml'</span><span class="p">)</span>
@@ -8067,84 +7905,6 @@ Optimal growth rate: 0.49154514798795895 1/hr
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<h3>Objective</h3><p>0.5 EX_glc__D_e + 0.5 EX_o2_e = -0.429545454545454</p><h4>Uptake</h4><table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th>Metabolite</th>
-<th>Reaction</th>
-<th>Flux</th>
-<th>C-Number</th>
-<th>C-Flux</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>glc__D_e</td>
-<td>EX_glc__D_e</td>
-<td>0.2864</td>
-<td>6</td>
-<td>100.00%</td>
-</tr>
-<tr>
-<td>o2_e</td>
-<td>EX_o2_e</td>
-<td>0.5727</td>
-<td>0</td>
-<td>0.00%</td>
-</tr>
-</tbody>
-</table><h4>Secretion</h4><table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th>Metabolite</th>
-<th>Reaction</th>
-<th>Flux</th>
-<th>C-Number</th>
-<th>C-Flux</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ac_e</td>
-<td>EX_ac_e</td>
-<td>-0.5727</td>
-<td>2</td>
-<td>66.67%</td>
-</tr>
-<tr>
-<td>co2_e</td>
-<td>EX_co2_e</td>
-<td>-0.5727</td>
-<td>1</td>
-<td>33.33%</td>
-</tr>
-<tr>
-<td>h2o_e</td>
-<td>EX_h2o_e</td>
-<td>-0.5727</td>
-<td>0</td>
-<td>0.00%</td>
-</tr>
-<tr>
-<td>h_e</td>
-<td>EX_h_e</td>
-<td>-0.5727</td>
-<td>0</td>
-<td>0.00%</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e3e73f1e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -8153,28 +7913,13 @@ Optimal growth rate: 0.49154514798795895 1/hr
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>In the cell below, your task is to:</p>
-<ol>
-<li>Import the model for <em>Saccharomyces cerevisiae</em> (file named <code>yeast-GEM.xml</code>) into COBRA</li>
-<li>Set a custom objective function where the biomass coefficient is 0.5 and</li>
-</ol>
+<p><input style="margin-bottom: 20px;" type="checkbox"/><label>Import the model for <em>Saccharomyces cerevisiae</em> (file named <code>yeast-GEM.xml</code>) into COBRA</label><br/>
+<input style="margin-bottom: 20px;" type="checkbox"/><label>Set a custom objective function where: (1) thiazole phosphate synthesis (<code>"id: r_2070"</code>) objective coefficient is set to 0.5 and (2) biomass function (<code>"id: r_4041"</code>) coefficient set to 0.5</label><br/>
+<input type="checkbox"/><label>Optimize the model and print out the resulting fluxes for the two reactions. (<b>Hint:</b> Use <code>solution.fluxes[['rid1','rid2']]</code> to print results)</label><br/></p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=3a836d2c">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">yeast8</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">read_sbml_model</span><span class="p">(</span><span class="s1">'./yeast-GEM.xml'</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b4d60c22">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=ab2153e2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8182,25 +7927,86 @@ Optimal growth rate: 0.49154514798795895 1/hr
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># yeast8</span>
-
-<span class="c1"># print all subsystems of the model</span>
-<span class="n">yeast8</span><span class="o">.</span><span class="n">reactions</span><span class="o">.</span><span class="n">get_by_id</span><span class="p">(</span><span class="s1">'r_2070'</span><span class="p">)</span><span class="o">.</span><span class="n">objective_coefficient</span> <span class="o">=</span> <span class="mf">0.5</span>
-<span class="n">yeast8</span><span class="o">.</span><span class="n">reactions</span><span class="o">.</span><span class="n">get_by_id</span><span class="p">(</span><span class="s1">''</span><span class="p">)</span><span class="o">.</span><span class="n">objective_coefficient</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># YOUR CODE HERE (REPLACE THE LINE BELOW)</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">"Solution not implemented yet."</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>('group1', '')</pre>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=98692dc0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Part-2:-Gene-Knock-out">Part 2: Gene Knock-out<a class="anchor-link" href="#Part-2:-Gene-Knock-out">¶</a></h4><p>We can simulate the response of the metabolism upon knocking out different genes. We can do this with the <code>Gene</code> object in the library. We can access the gene information and knock it out by accessing the <code>gene_reaction_rule</code> property of the <code>Reaction</code> object, which returns an identifier string. We can then query that string using <code>model.genes.get_by_id('my_gene_rule_id')</code>, save it in a variable called <code>gene</code> and simply run <code>gene.knock_out()</code> to knock it out.</p>
+<br/>
+<p>To carry out this step, you'll need to perform the following steps on the same yeast metabolism from part 1:</p>
+<p><input style="margin-bottom: 20px;" type="checkbox"/><label>Re-set the objective coefficients of the model (or simply import it again)</label><br/>
+<input style="margin-bottom: 20px;" type="checkbox"/><label>Make 2 copies of the model (for 2 different knock-out experiments)</label><br/>
+<input style="margin-bottom: 20px;" type="checkbox"/><label>On the first copy, knock out the pyruvate kinase reaction from its gene. The reaction has <code>id: r_0962</code>.</label><br/>
+<input style="margin-bottom: 20px;" type="checkbox"/><label>On the second copy, knock out the acetyl-CoA carboxylase from its gene. The reaction has <code>id: r_0109</code>.</label><br/>
+<input style="margin-bottom: 20px;" type="checkbox"/><label>Set the objective function to <code>id: r_4041</code> (for biomass) on the original model, and the two copies (3 models in total).</label><br/>
+<input type="checkbox"/><label>Run flux-balance analysis on each of the 3 models and print out the flux of the objective reaction for clear comparison.</label><br/></p>
+<br/>
+<p><strong>Please note that a reaction can be regulated by multiple genes.</strong></p>
+<br/>
+<p>Upon completion, answer the follow-up questions:</p>
+<ol>
+<li>Are the flux values of <code>r_4041</code> the same between the original model and the first copy? What does this difference tell us about the relation of the knocked out gene to the biomass objective?</li>
+<li>Are the flux values of <code>r_4041</code> the same between the original model and  the second copy? What does this difference tell us about the relation of the knocked out gene to the biomass objective?</li>
+<li>If you mess around in COBRApy, you may notice that we can also perform knock-out on the reaction itself by setting its upper and lower bounds to 0 or simply running <code>reaction.knock_out()</code>. This seems as an easier approach to perform a knock-out. Do you think we should use this method for knock-outs instead of the gene rule? Can you explain why (or why not) this is a good (or bad) approach?</li>
+</ol>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=04ab11af">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># YOUR CODE HERE (REPLACE THE LINE BELOW)</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">"Solution not implemented yet."</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=759d42d2">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Answer to 1:</strong></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=33364919">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Answer to 2:</strong></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=afe90a02">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Answer to 3:</strong></p>
 </div>
 </div>
 </div>
@@ -8213,10 +8019,10 @@ Optimal growth rate: 0.49154514798795895 1/hr
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>In this notebook, we've explored what flux-balance analysis is, and how we can use COBRApy to load GSMMs from <code>sbml</code> files and optimize for a certain objective function.</p>
 <p>In most applications of flux-balance analysis, it is valuable to read the paper of the GSMMs model release as it contains important information relevant to our purpose.</p>
-<p>In the future</p>
-<h3 id="Supplementary-Material">Supplementary Material<a class="anchor-link" href="#Supplementary-Material">¶</a></h3><p>You can check out last year's <a href="https://github.com/FarukEfe/McMasterU-iGEM-2025-Modelling">GitHub repo</a> for flux-balance analysis. It can give you a good idea of how an fba project can be structured.</p>
-<p>As previously mentioned, feel free to check out the <a href="https://cobrapy.readthedocs.io/en/latest/">COBRApy documentation</a> on the use of the library.</p>
-<p>If you're curious, you can also check out <a href="https://gitlab.igem.org/2025/software-tools/mcmasteru">our software repository</a> from iGEM 2025, where the flux-balance analysis code can be found under the <code>fba-codebase</code> folder.</p>
+<p>In the upcoming activities, we'll expand on the practice we did here and introduce new concepts such as flux-variability analysis, knock-out targets, troubleshooting and validating models.</p>
+<h3 id="Supplementary-Material">Supplementary Material<a class="anchor-link" href="#Supplementary-Material">¶</a></h3><p>As previously mentioned, feel free to check out the <a href="https://cobrapy.readthedocs.io/en/latest/">COBRApy documentation</a> on the use of the library.</p>
+<p>If you're curious, you can also check out <a href="https://gitlab.igem.org/2025/software-tools/mcmasteru">our software repository</a> from iGEM 2025, where the flux-balance analysis code can be found under the <code>fba-codebase</code> folder. Alternatively, you can also find the code on this <a href="https://github.com/FarukEfe/McMasterU-iGEM-2025-Modelling">GitHub repo</a>.</p>
+<p>If you're looking for more resources Dr. Francisco Zorrilla from Cambridge University developed a set of exercises for his Part III Systems Biology course. You can check out his resources <a href="https://github.com/franciscozorrilla/systems-biology-fba-practical">here</a>.</p>
 </div>
 </div>
 </div>
